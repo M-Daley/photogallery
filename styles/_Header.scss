@@ -1,0 +1,10 @@
+@use 'Variables';
+
+.header {
+    background-color: Variables.$accent_one;
+    padding: 1.5rem;
+    width: 100%;
+    min-height: 100px;
+    max-width: 100vw;
+    margin: auto;
+}
