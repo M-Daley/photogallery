@@ -31,8 +31,9 @@ export default function Home({ images }) {
   )
 }
 
-export async function getStaticProps(ctx) {
-  const res = await fetch('http://localhost:3000/api/imgs')
+export async function getStaticProps(_) {
+  // const res = await fetch('http://localhost:3000/api/imgs')
+  const res = await fetch('https://lit-forest-23513.herokuapp.com//api/imgs')
   const data = await res.json()
 
   if (!data) {

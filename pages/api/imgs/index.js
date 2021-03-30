@@ -11,6 +11,8 @@ export default (req, res) => {
     const images = filenames.map(name => path.join('/',
         dirRelativeToPublicFolder, '/', name))
 
+    const port = process.env.PORT
+
     res.status(200)
     res.json(images)
 }
