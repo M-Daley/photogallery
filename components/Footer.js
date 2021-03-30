@@ -10,7 +10,7 @@ export default function Footer() {
                 smooth={true}
                 duration={1000}
             ><ion-icon name="arrow-up-circle-outline" /></Link>
-            <p>Site made By Malcom Daley</p>
+            <p>Site made By <a href="https://www.mdaley.dev" target="_blank">Malcom Daley</a></p>
         </div>
     )
 }
