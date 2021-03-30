@@ -1,27 +1,25 @@
+import imageLinks from '../assets/cloudRef'
 import { useState, useEffect } from 'react'
 
-export default function Home({ images }) {
+
+export default function Home() {
   const [gallery, setGallery] = useState()
 
-  console.log(images.data)
-
   useEffect(() => {
-    setGallery(
-      <div className="image-gallery">
-        {images.data.map((url, idx) => {
+      setGallery(<div className="image-gallery">
+        {imageLinks.map((url, idx) => {
           return <a
             key={idx}
             href={url}
             target="_blank"
             style={{
               gridArea: `img-${idx}`,
-              backgroundImage: `url(${url.replace(/\\/g, '/')})`
+              backgroundImage: `url(${url})`
             }}>
           <ion-icon name="expand" />
         </a>
       })}
-    </div>
-    )
+    </div>)
   }, [])
 
   return (
@@ -29,22 +27,4 @@ export default function Home({ images }) {
       {gallery}
     </div>
   )
-}
-
-export async function getStaticProps(_) {
-  // const res = await fetch('http://localhost:3000/api/imgs')
-  const res = await fetch('https://lit-forest-23513.herokuapp.com/api/imgs')
-  const data = await res.json()
-
-  if (!data) {
-    return {
-      notFound: true
-    }
-  }
-  
-  return {
-    props: {
-      images: { data }
-    }
-  }
 }
