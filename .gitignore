@@ -18,7 +18,6 @@
 # misc
 .DS_Store
 *.pem
-readMe_image.png
 
 # debug
 npm-debug.log*
