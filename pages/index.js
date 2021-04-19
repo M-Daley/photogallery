@@ -7,14 +7,14 @@ export default function Home() {
 
   useEffect(() => {
       setGallery(<div className="image-gallery">
-        {imageLinks.map((url, idx) => {
+        {imageLinks.map((_, idx) => {
           return <a
             key={idx}
-            href={url}
+            href={_.link}
             target="_blank"
+            className={`img-${idx} ${_.type}`}
             style={{
-              gridArea: `img-${idx}`,
-              backgroundImage: `url(${url})`
+              backgroundImage: `url(${_.link})`
             }}>
           <ion-icon name="expand" />
         </a>

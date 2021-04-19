@@ -26,8 +26,15 @@ $grid_gap: 15px;
 
 // Breakpoitns
 $mobile: 480px;
-$tablet: 768px;
+$tablet: 840px;
 $desktop: 1024px;
+
+// Grid Template Naming
+@for $i from 0 through 36 {
+    .img-#{$i} {
+        grid-area: img-#{$i};
+    }
+}
 
 // misc
 $drop_shadow: 10px 10px 4px rgba(0,0,0,0.7);
